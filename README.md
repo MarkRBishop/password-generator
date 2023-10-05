@@ -36,4 +36,6 @@ THEN the password is either displayed in an alert or written to the page.
 Starting off the project, the html and the css were provided, as well as a barebones .js document. First, I started define by defining the character sets and set up a function to randomize the characters. Afterwards, I started tackling the problem of making a prompt for satisfying the criteria provided by the user. With some research I found the confirm function and used that to set prompts. Once the parameters are set, the program needed to be able to set the character options to be randomized for generating the password. Finally the provided (JavaScript) code is used to write the returned randomized password to the application. 
 
 ## Links
+https://markrbishop.github.io/password-generator/
 
+![Alt Text](https://github.com/MarkRBishop/password-generator/blob/main/Assets/Password-generater-SS.png)
