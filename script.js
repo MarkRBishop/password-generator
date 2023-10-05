@@ -17,8 +17,7 @@ function randomCharacter(charOption) {
 function generatePassword(){
 
   //prompts for length, alerts and prevents from continuing if the number is too short or too long
-  var length = prompt("Enter password length" + 
-  "(between 8 and 128 characters)");
+  var length = prompt("Enter password length \n(between 8 and 128 characters)");
   if (length < 8 || length > 128 || isNaN(length)){
     alert("Please enter valid length. \n(between 8 and 128)")
     return;
