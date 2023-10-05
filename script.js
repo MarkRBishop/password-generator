@@ -17,9 +17,10 @@ function randomCharacter(charOption) {
 function generatePassword(){
 
   //prompts for length, alerts and prevents from continuing if the number is too short or too long
-  var length = prompt("Enter password length (between 8 and 128 characters)");
+  var length = prompt("Enter password length" + 
+  "(between 8 and 128 characters)");
   if (length < 8 || length > 128 || isNaN(length)){
-    alert("please enter valid length (between 8 and 128)")
+    alert("Please enter valid length. \n(between 8 and 128)")
     return;
   }
 
@@ -27,7 +28,7 @@ function generatePassword(){
   var useLowercase = confirm("Include lowercase characters?");
   var useUppercase = confirm("Include uppercase characters?");
   var useNumber = confirm("Include numbers?");
-  var useSpecial = confirm("include Special characters?");
+  var useSpecial = confirm("Include special characters?");
 
   //if no options were selected then alert happens and generater stops
   if (!useLowercase && !useUppercase && !useNumber && !useSpecial) {
