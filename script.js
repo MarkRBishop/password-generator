@@ -1,6 +1,57 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
+//Defines the character options to be used in the password
+var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
+var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var specialChar = "!@#$%^&*()_-+=<>?"
+
+function randomCharacter(charOption) {
+  var randomIndex = Math.floor(Math.random() * charOption.length);
+  return charOption.charAt(randomIndex);
+}
+
+function generatePassword(){
+  var length = prompt("Enter password length (between 8 and 128 characters)");
+  if (length < 8 || length > 128){
+    alert("please enter valid length (between 8 and 128)")
+    return;
+  }
+
+  var useLowercase = confirm("Include lowercase characters?");
+  var useUppercase = confirm("Include uppercase characters?");
+  var useNumber = confirm("Include numbers?");
+  var useSpecial = confirm("include Special characters?");
+
+  if (!useLowercase && !useUppercase && !useNumber && useSpecial) {
+    alert("Please select atleast one of the options");
+    return;
+  }
+
+  var charOption = ""
+  if (useLowercase){
+  charOption += lowercaseChar;
+  }
+  if (useUppercase){
+  charOption += uppercaseChar;
+  }
+  if (useNumber){
+  charOption += numbers;
+  }
+  if (useSpecial){
+  charOption += specialChar;
+  }
+
+  var password = "";
+  for (var i = 0; i < length; i++){
+    password += randomCharacter(charOption);
+  }
+
+  return password;
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
