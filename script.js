@@ -8,28 +8,34 @@ var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var specialChar = "!@#$%^&*()_-+=<>?"
 
+//randomizes the characters
 function randomCharacter(charOption) {
   var randomIndex = Math.floor(Math.random() * charOption.length);
   return charOption.charAt(randomIndex);
 }
-
+//function to write the password
 function generatePassword(){
+
+  //prompts for length, alerts and prevents from continuing if the number is too short or too long
   var length = prompt("Enter password length (between 8 and 128 characters)");
   if (length < 8 || length > 128){
     alert("please enter valid length (between 8 and 128)")
     return;
   }
 
+  //asks whether to use any of these options
   var useLowercase = confirm("Include lowercase characters?");
   var useUppercase = confirm("Include uppercase characters?");
   var useNumber = confirm("Include numbers?");
   var useSpecial = confirm("include Special characters?");
 
-  if (!useLowercase && !useUppercase && !useNumber && useSpecial) {
+  //if no options were selected then alert happens and generater stops
+  if (!useLowercase && !useUppercase && !useNumber && !useSpecial) {
     alert("Please select atleast one of the options");
     return;
   }
 
+  //sets the character options based on the users selection
   var charOption = ""
   if (useLowercase){
   charOption += lowercaseChar;
@@ -44,6 +50,7 @@ function generatePassword(){
   charOption += specialChar;
   }
 
+  //creates the password based on the inputed length
   var password = "";
   for (var i = 0; i < length; i++){
     password += randomCharacter(charOption);
